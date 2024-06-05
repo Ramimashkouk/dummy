@@ -24,7 +24,6 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') != true
         run: |
           python -m poetry --build publish --dry-run
-        working-directory: backend/df_designer
 
       - name: build wheels and upload to pypi
         if: startsWith(github.ref, 'refs/tags/v')
@@ -32,14 +31,13 @@ jobs:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
         run: |
           python -m poetry --build publish
-        working-directory: backend/df_designer
 
       - name: upload binaries into release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: backend/df_designer/dist/*
+          file: dist/*
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
