@@ -6,9 +6,9 @@ authors = ["Ramimashkouk <ramima1996@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-sphinx = { version = "*", python = "^3.10"}
-sphinx-rtd-theme = { version = "*", python = "^3.10"}
+python = "^3.8.1"
+sphinx = { version = "*"}
+sphinx-rtd-theme = { version = "*"}
 
 
 [build-system]
