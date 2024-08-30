@@ -33,7 +33,7 @@ jobs:
         run: poetry run make -C docs html
 
       - name: remove jekyll theming
-        run: touch docs/_build/.nojekyll
+        run: touch docs/_build/html/.nojekyll
 
       - name: deploy website
         uses: JamesIves/github-pages-deploy-action@v4
